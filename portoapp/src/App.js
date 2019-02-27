@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-//import './styles/output.css'
-//import Main from './components/Main'
-//import About from './components/About'
-//import Arrow from './components/Arrow'
+import './styles/output.css'
+import Main from './components/Main'
+import About from './components/About'
+import Arrow from './components/Arrow'
 import { Element } from 'react-scroll'
-//import ContactForm from './components/ContactForm';
+import ContactForm from './components/ContactForm';
 
 
 class App extends Component {
