@@ -3,7 +3,6 @@ import { animateScroll as scroll } from "react-scroll";
 import ImageOne from './ImageOne'
 
 
-
 export default class Arrow extends Component {
     constructor(props) {
         super(props)
@@ -12,14 +11,15 @@ export default class Arrow extends Component {
             scrolled: false
         }
     }
+
     scrollToTop = () => {
         scroll.scrollToTop();
     };
+
     componentDidMount() {
         window.addEventListener('scroll', () => {
             window.scrollY > 20 ? (this.setState({ scrolled: true })) :
-                (this.setState({ scrolled: false }))
-            console.log(window.scrollY)
+            (this.setState({ scrolled: false }))
         })
     }
 
@@ -28,14 +28,10 @@ export default class Arrow extends Component {
 
         return (
             <div className='Bla'>
-                <ImageOne />
-
-                <div className={scrolled}
-                >
-
-                    <i onClick={this.scrollToTop} className="fas fa-arrow-up"></i></div>
-
-
+                <ImageOne/>
+                <div className={scrolled}>
+                    <i onClick={this.scrollToTop} className="fas fa-arrow-up"></i>
+                </div>
             </div>
         )
     }

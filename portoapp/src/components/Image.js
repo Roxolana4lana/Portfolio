@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import ButtonLink from './ButtonLink'
 
+
 export default class Image extends Component {
     constructor() {
         super()
         this.state = {
             isHovered: false
-        };
-
+        }
     }
 
     handleHover = () => {
@@ -15,27 +15,28 @@ export default class Image extends Component {
             isHovered: true
         })
     }
+
     handleLeave = () => {
         this.setState(prevState => ({
             isHovered: !prevState.isHovered
         }))
     }
+
     render() {
-
-        let myButton = this.state.isHovered ? <div style={{ display: 'block' }}><ButtonLink /> </div> : <div style={{ display: 'none' }}><ButtonLink /> </div>
-
+        let myButton = this.state.isHovered ? <div style={{ display: 'block' }}>
+        <ButtonLink /> </div> : <div style={{ display: 'none' }}><ButtonLink /> </div>
 
         return (
-            <div onMouseMoveCapture={this.handleHover} onMouseOut={this.handleLeave} >
+            <div onMouseMoveCapture={this.handleHover} onMouseOut={this.handleLeave}>
                 <h1>{this.props.title}</h1>
-
-                <div className='seeImage' style={{ backgroundImage: `url(${this.props.name})`, backgroundPosition: 'center', backgroundSize: 'cover', position: 'relative' }}>
-
-
+                <div className='seeImage' 
+                style={{backgroundImage: `url(${this.props.name})`,
+                        backgroundPosition: 'center',
+                        backgroundSize: 'cover',
+                        position: 'relative' }}>
                     {myButton}
                 </div>
             </div>
-
         )
     }
 }

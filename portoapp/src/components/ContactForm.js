@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+
 export default class ContactForm extends Component {
     constructor() {
         super()
@@ -12,6 +13,7 @@ export default class ContactForm extends Component {
             }
         }
     }
+
     handleMailChange = e => {
         this.setState({
             mail: {
@@ -20,15 +22,17 @@ export default class ContactForm extends Component {
             }
         })
     }
+
     handleMailSubmit = e => {
         e.preventDefault()
         const { mail } = this.state
-        fetch(`http://127.0.0.1:4000/send-email?recipient=${mail.recipient}&sender=${mail.sender}&subject=${mail.subject}&text=${mail.text}`)
-
+        fetch(`http://127.0.0.1:4000/send-email?
+                recipient=${mail.recipient}
+                &sender=${mail.sender}
+                &subject=${mail.subject}
+                &text=${mail.text}`)
             .catch(err => console.log(err))
-
     }
-
 
     render() {
         return (
@@ -38,36 +42,34 @@ export default class ContactForm extends Component {
                     <form onSubmit={this.handleMailSubmit}>
                         <div className="formPart">
                             <label>Email</label>
+
                             <input type='text'
                                 value={this.state.mail.sender}
                                 onChange={this.handleMailChange}
-                                name='sender'
-                            />
+                                name='sender'/>
                         </div>
-                        <br />
+                        <br/>
                         <div className="formPart">
                             <label>Subject</label>
 
                             <input type='text'
                                 value={this.state.mail.subject}
                                 onChange={this.handleMailChange}
-                                name='subject'
-                            />
+                                name='subject'/>
+
                         </div>
-                        <br />
+                        <br/>
                         <div className="formPart">
                             <label>Text</label>
 
                             <textarea
                                 value={this.state.mail.text}
                                 onChange={this.handleMailChange}
-                                name='text'
-                            />
+                                name='text'/>
                         </div>
-                        <br />
+                        <br/>
                         <button className='formButton'>Submit</button>
                     </form>
-
                 </div>
                 <div className='myContacts'></div>
             </div>
