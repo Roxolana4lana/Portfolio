@@ -23,8 +23,9 @@ export default class Image extends Component {
     }
 
     render() {
+        console.log(this.props.href)
         let myButton = this.state.isHovered ? <div style={{ display: 'block' }}>
-        <ButtonLink /> </div> : <div style={{ display: 'none' }}><ButtonLink /> </div>
+        <ButtonLink href={this.props.href}/> </div> : <div style={{ display: 'none' }}><ButtonLink /> </div>
 
         return (
             <div onMouseMoveCapture={this.handleHover} onMouseOut={this.handleLeave}>
