@@ -6,7 +6,7 @@ import Main from './components/Main'
 import About from './components/About'
 import Arrow from './components/Arrow'
 import { Element } from 'react-scroll'
-import ContactForm from './components/ContactForm';
+import Form from './components/Form';
 
 
 class App extends Component {
@@ -16,7 +16,7 @@ class App extends Component {
         <Element name='home'><Main /></Element>
         <Element name='about'><About /></Element>
         <Element name='arrow'><Arrow /></Element>
-        <Element name='form'><ContactForm /></Element>
+        <Element name='form'><Form /></Element>
       </React.Fragment>
     );
   }
