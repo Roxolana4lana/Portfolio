@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Video from './Video'
 import IntroWords from './IntroWords'
-import NavButton from './NavButton'
+import NavBar from './NavBar'
 
 
 export default class Main extends Component {
@@ -15,7 +15,7 @@ export default class Main extends Component {
                     <div className='header-words'>
                         <IntroWords/>
                     </div>
-                    <NavButton/>
+                    <NavBar/>
                     </div>
                 </div>
         )
