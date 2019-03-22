@@ -1,6 +1,21 @@
 import React, { Component } from 'react';
 import { Link } from "react-scroll";
-import NavButton from './NavButton';
+import posed from 'react-pose';
+
+const Sidebar = posed.ul({
+    open: {
+        x: '0%',
+        delayChildren: 400,
+        staggerChildren: 200
+    },
+    closed: { x: '-100%', delay: 300 }
+});
+
+const Item = posed.li({
+    open: { y: 0, opacity: 1 },
+    closed: { y: 20, opacity: 0 }
+});
+
 
 
 class NavBar extends Component {
@@ -8,58 +23,72 @@ class NavBar extends Component {
         super()
         this.state = {
             display: 'block',
-            zIndex: '2'
+            zIndex: '2',
+            doesi: false,
+            isOpen:false
         }
     }
 
+    // handleClick = e => {
+    //     this.setState(prevState => ({
+    //         doesi: !prevState.doesi
+    //     }))
+    // }
+
     handleMy = () => {
         this.setState({
-            display: 'none'
+            isOpen: !this.state.isOpen
         })
 
     }
     render() {
-        let theButton = this.state.display !== 'block' ? <NavButton /> : null
-
+       // let navbut = this.state.doesi ? (<NavBar />) : null;
+        let theButton = !this.state.isOpen?( < div className = 'NavButton' >
+            <i className="fas fa-bars" onClick={this.handleMy}
+                style={{ display: this.state.doesi ? 'none' : 'block' }}>
+            </i></div> )  : true
+//  <div className='NavBar' style={{ zIndex: '2'}}>
         return (
             <React.Fragment>
-                <div className='NavBar' style={this.state} onClick={this.handleMy}>
-                    <ul>
-                        <li>
+             
+                <div className='Nav'style={{zIndex:'2'}}>
+                    {theButton}
+                    <Sidebar className='NavBar' pose={this.state.isOpen ? 'open' : 'closed'} onClick={this.handleMy}>
+                        <Item className='liBar' style={{listStyleType:'none'}}>
                             <Link to='home'
                             spy={true}
                             smooth={true}
                             duration={1000}>
                             Main
                             </Link>
-                        </li>
-                        <li>
+                            </Item>
+                    <Item className='liBar'>
                             <Link to='about'
                             spy={true}
                             smooth={true}
                             duration={1000}>
                             Skills
                             </Link>
-                        </li>
-                        <li>
+                            </Item>
+                    <Item className='liBar'>
                             <Link to='arrow'
                             spy={true}
                             smooth={true}
                             duration={1000}>
                             Projects
                             </Link>
-                        </li>
-                        <li>
+                            </Item>
+                    <Item className='liBar'>
                             <Link to='form'
                             spy={true}
                             smooth={true}
                             duration={1000}>
                             Contact
                             </Link>
-                        </li>
-                    </ul>
+                            </Item>
+                    </Sidebar>
+               
                 </div>
-                {theButton}
             </React.Fragment>
         )
     }
