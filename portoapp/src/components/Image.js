@@ -1,41 +1,40 @@
 import React, { Component } from 'react'
 import ButtonLink from './ButtonLink'
+import LinkBut from './LinkBut';
 
 
 export default class Image extends Component {
     constructor() {
         super()
         this.state = {
-            isHovered: false
+            scrolled: false
         }
     }
 
-    handleHover = () => {
-        this.setState({
-            isHovered: true
+    componentDidMount() {
+        window.addEventListener('scroll', () => {
+            (window.scrollY > 1450 )? this.setState({ scrolled: true }) :
+                this.setState({ scrolled: false })
+                console.log(window.scrollY)
         })
     }
 
-    handleLeave = () => {
-        this.setState(prevState => ({
-            isHovered: !prevState.isHovered
-        }))
-    }
-
     render() {
-        console.log(this.props.href)
-        let myButton = this.state.isHovered ? <div style={{ display: 'block' }}>
-        <ButtonLink href={this.props.href}/> </div> : <div style={{ display: 'none' }}><ButtonLink /> </div>
-
+        let scrolled = !this.state.scrolled ? { opacity: 0, transition: '5s' } : { opacity: 1, transition: '5s' }
         return (
-            <div onMouseMoveCapture={this.handleHover} onMouseOut={this.handleLeave}>
-                <h1>{this.props.title}</h1>
+            <div className='imageBlock'>
                 <div className='seeImage' 
-                style={{backgroundImage: `url(${this.props.name})`,
-                        backgroundPosition: 'center',
-                        backgroundSize: 'cover',
-                        position: 'relative' }}>
-                    {myButton}
+                    style={{backgroundImage: `url(${this.props.name})`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    position: 'relative' }}>
+                </div>
+                <div className='imageRight' style={scrolled}><h1>{this.props.title}</h1>
+                    <p>{this.props.info}</p>
+                    <div className='myButtons'>
+                    <ButtonLink href={this.props.href} /> 
+                    {this.props.path ? <LinkBut path={this.props.path} />: null}
+                    </div>
                 </div>
             </div>
         )
