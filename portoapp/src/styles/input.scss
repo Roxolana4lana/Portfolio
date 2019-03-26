@@ -40,7 +40,6 @@ body{
     video{
         min-width: 100%;
         min-height: 100%;
-       
     }
 }
 .header-intro{
@@ -50,94 +49,87 @@ body{
     top:0;
     left:0;
     background-color:$fontBackA;
-   color: #fff;
- text-align: center;
+    color: #fff;
+    text-align: center;
 }
  .header-words{
-  
     margin-top: 40vh;
     h1{
-         font-size: 4rem;
-         
+         font-size: 4rem;   
     }
  }
 .NavButton{
-position: fixed;
- font-size: 3rem;
-text-align: left;
-top:2rem;
-left:2rem;
-z-index: 1000;
+    position: fixed;
+    font-size: 3rem;
+    text-align: left;
+    top:2rem;
+    left:2rem;
+    z-index: 1000;
 }
 .NavBar{
- position: fixed;
+    position: fixed;
     top:0;
     left:0;
     height: 100vh;
-   
     color: white;
     padding:12rem 2rem;
-  z-index: 1000;
-  transition: 0.40s ease;
-   @include breakpoint(s){ width: 75%;
+    z-index: 1000;
+    transition: 0.40s ease;
+    @include breakpoint(s){ width: 75%;
     background-color: #020611fd;}
-      @include breakpoint(m){ width: 40%;
+    @include breakpoint(m){ width: 40%;
     background-color: $fontBack;}
-       @include breakpoint(l)
-       { width: 20%;
+    @include breakpoint(l){ width: 20%;
     background-color: $fontBack; }
     .liBar{
         list-style-type: none;
         margin-top:1rem;
-margin-bottom: 6rem;
-a{
-    color: white;
-   
-    font-size: 4rem;
-    text-decoration: none;
-   position: relative;
-    &:after{
-       content:'';
-       width:0%;
-       height:0.2rem;
-       position: absolute;
-       background: #00B4DB;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #3acfd5 0%, #3a4ed5);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #3acfd5 0%, #3a4ed5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-bottom:0%;
-left: 50%;
-border-radius: 10px;
-transition: all 400ms ease;
-   }
-    &:hover{
-        color: $fontMain;
-        padding-bottom: 0.6rem;
+        margin-bottom: 6rem;
+            a{
+                color: white;
+                font-size: 4rem;
+                text-decoration: none;
+                position: relative;
+                     &:after{
+                        content:'';
+                        width:0%;
+                        height:0.2rem;
+                        position: absolute;
+                        background: #00B4DB;  /* fallback for old browsers */
+                        background: -webkit-linear-gradient(to right, #3acfd5 0%, #3a4ed5);  /* Chrome 10-25, Safari 5.1-6 */
+                        background: linear-gradient(to right, #3acfd5 0%, #3a4ed5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                        bottom:0%;
+                        left: 50%;
+                        border-radius: 10px;
+                        transition: all 400ms ease;
+                            }
+                &:hover{
+                color: $fontMain;
+                padding-bottom: 0.6rem;
+                }
+                &:hover::after{
+                left:0%;
+                width:100%;
+                }
+            }
+        }
     }
-    &:hover::after{
-      left:0%;
-      width:100%;
-    }
-   }
-    }
-       }
 
 .notArrow{
     display: none;
 }
 .arrow{
- position: fixed;
-
-
-display: inline;
-  top:90vh;
-  left:90vw;
+    position: fixed;
+    display: inline;
+    top:90vh;
+    left:90vw;
     font-size:3rem;
     -webkit-animation-name: myArrow; /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
-  -webkit-animation-iteration-count: 7;
-  animation-name: myArrow;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: 7;
+    animation-name: myArrow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }
 @keyframes myArrow{
     0%{top: 90vh;}
@@ -148,42 +140,38 @@ display: inline;
 }
 .About{
     background-color:$colorBack;
-    height: 100vh;
     width: 100vw;
     color: white;
-padding-top: 10vh;
-text-align: center;
-   
+    padding-top: 10vh;
+    text-align: center;
+    @include breakpoint(s){ height: 100%;}
+    @include breakpoint(m){ height: 100%;}
+    @include breakpoint(l){  height: 100vh;}
+    .addInfo{
+        margin: 7rem 4rem;
+    }
+    h3{
+    font-size:2rem;
+    }
     .pAbout{
-         position: relative;
-          font-size: 3rem;
-       
+    position: relative;
+    font-size: 3rem;
+    }
 }
+.myIcons{
+        margin-top: 1rem;
+        color: white;
+        font-size:8rem;
+        display:grid;
+        @include breakpoint(s){grid-template-columns: auto auto;}
+        @include breakpoint(m){grid-template-columns: auto auto auto;}
+        @include breakpoint(l){ grid-template-columns: auto auto auto;}
 }
-
-
-
-.myIcons,
-
-{
-    margin-top: 1rem;
-    color: white;
-   // text-align: center;
-    font-size:8rem;
-    display:grid;
-     @include breakpoint(s){grid-template-columns: auto auto;}
-      @include breakpoint(m){grid-template-columns: auto auto auto;}
-       @include breakpoint(l){ grid-template-columns: auto auto auto;}
-
-}
-
 .theIcon{
-
    -webkit-animation:myIcon 5s infinite linear;
-animation:myIcon 5s infinite linear;
-margin:5rem;
+    animation:myIcon 5s infinite linear;
+    margin:5rem;
 }
-
 @keyframes myIcon{
 from{
     transform: rotateY(0deg);
@@ -192,194 +180,186 @@ to{
     transform: rotateY(359deg); 
 }
 }
-
-.Bla,
 .mainForm{
     background-color:$colorBack;
     height: 100vh;
     width: 100vw;
     color: white;
-padding-top: 10vh;
-text-align: center;
- @include breakpoint(s){ height: 100%;}
-   @include breakpoint(m){ height: 100%;}
+    padding-top: 10vh;
+    text-align: center;
+    @include breakpoint(s){ height: 100%;}
+    @include breakpoint(m){ height: 100%;}
     @include breakpoint(l){ height: 100vh;}
    
     h2{
-         position: relative;
-          font-size: 3rem;
-          text-align: center;
-    }
+        position: relative;
+        font-size: 3rem;
+        text-align: center;
+        }
     h1{
         font-size: 3rem; 
     }
 }
-
-.theImage{
-
- display:flex;
- overflow:scroll;
-  @include breakpoint(s){flex-direction: column; margin-top:4vh;}
-   @include breakpoint(m){flex-direction: column; margin-top:10vh;}
-    @include breakpoint(l){flex-direction: row;justify-content: space-around;  margin-top:15vh;}
-
-h1{
-    color: #fff;
-    margin-bottom:1rem;
- text-align: center;
-    font-size: 3rem;
-}
-   
-.MyImage{
-   position: relative;
-    align-self: center;
-     padding:0 1.5rem;
-    // width:30rem;
-    // height:30rem;
-    .seeImage{
-       
-        width: 30rem;
-         height: 30rem;
+.wrapper{
+    text-align: center;
+    h2{
+        font-size: 3rem;
+        margin-bottom: 7rem;
     }
-
 }
- 
+.Bla{
+    height: 100%;
+    width: 100vw;
+    color: white;
+    background-color:$colorBack;
+    padding-top: 10vh;
+}
+
+.imageBlock{
+    display:flex;
+    margin-bottom:2rem;
+    justify-content: space-around;
+    @include breakpoint(s){flex-direction: column;}
+    @include breakpoint(m){flex-direction: column;padding: 0 9%;}
+    @include breakpoint(l){flex-direction: row;justify-content: space-around;}
+       h1{
+        color: #fff;
+         margin-bottom:1rem;
+        font-size: 3rem;
+        }
+        .imageRight{
+            @include breakpoint(s){ width:100%; padding-right:2rem;}
+            @include breakpoint(m){ width:70rem;}
+            @include breakpoint(l){ width:60rem;}
+            font-size:2rem;
+            text-align: right;
+   }
+   .myButtons{
+       display:flex;
+        flex-direction:row;
+       float:right;
+   }
+}
+.seeImage{
+    width: 50rem;
+    height: 40rem;
+    @include breakpoint(s){ width:100vw;}
+    @include breakpoint(m){ width:70rem;}
+    @include breakpoint(l){ width:60rem;}     
 }
 
 .hoveredLink{
-  position:absolute;
- margin-top:11rem;
- margin-left: -7rem;
-//   display: none;
-  // top:10rem;
-// margin-top:-20rem;
-// margin-left:-7rem;
-//z-index:-10;
-  -moz-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+    -moz-box-shadow:inset 0px 1px 0px 0px #97c4fe;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #97c4fe;
     box-shadow:inset 0px 1px 0px 0px #97c4fe;
-   background: -moz-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
-   background: -webkit-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
-  background: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%);
-
+    background: -moz-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+    background: -webkit-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+    background: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%);
 	background-color:#154e8f;
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
 	border-radius:6px;
-
     border: none;
-	 display:inline-block;
-	cursor:pointer;
-
+	display:inline-block;
+    cursor:pointer;
 	font-family:Arial;
 	font-size:15px;
 	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-   // text-shadow:0px 1px 0px #1570cd;
-   // box-shadow: -100px  #888888;
-
-&:hover {
-      background: -moz-linear-gradient(top,  #3a4ed5 0% ,#3acfd5 100%);
-   background: -webkit-linear-gradient(top, #3a4ed5 0% ,#3acfd5 100%);
-  background: linear-gradient(to right, #3a4ed5 0% ,#3acfd5 100%);
-      background:-o-linear-gradient(to right, #3a4ed5 0% ,#3acfd5 100%);
-      background:-ms-linear-gradient(to right, #3a4ed5 0% ,#3acfd5 100%);
-	
-	//filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6',GradientType=0);
-	background-color:#1e62d0;
-}
-&:active {
-	position:relative;
-	top:1px;
-}
+    padding:6px 24px;
+    margin: 0 1rem;
+    text-decoration:none;
+    
+    &:hover {
+        background: -moz-linear-gradient(top,  #3a4ed5 0% ,#3acfd5 100%);
+        background: -webkit-linear-gradient(top, #3a4ed5 0% ,#3acfd5 100%);
+        background: linear-gradient(to right, #3a4ed5 0% ,#3acfd5 100%);
+        background:-o-linear-gradient(to right, #3a4ed5 0% ,#3acfd5 100%);
+        background:-ms-linear-gradient(to right, #3a4ed5 0% ,#3acfd5 100%);
+	    background-color:#1e62d0;
+    }
+    &:active {
+	    position:relative;
+	    top:1px;
+    }
 }
 .myForm{
-    
     .formButton{
-      background: -moz-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
-   background: -webkit-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
-  background: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%);
-  border: none;
-  -moz-border-radius:6px;
-	-webkit-border-radius:6px;
-    border-radius:6px;
-    cursor: pointer;
-    font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-    text-decoration:none;
-    color: white;
-   // margin-top:1.5rem;
-    transition: 0.40s ease;
-    outline: none;
-    &:hover{
-        background: -moz-linear-gradient(top,  #3a4ed5 0% ,#3acfd5 100%);
-   background: -webkit-linear-gradient(top, #3a4ed5 0% ,#3acfd5 100%);
-  background: linear-gradient(to right, #3a4ed5 0% ,#3acfd5 100%);
-      background:-o-linear-gradient(to right, #3a4ed5 0% ,#3acfd5 100%);
-      background:-ms-linear-gradient(to right, #3a4ed5 0% ,#3acfd5 100%);
- margin-top:0rem;    
-}
+        background: -moz-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+        background: -webkit-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+        background: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%);
+        border: none;
+        -moz-border-radius:6px;
+	    -webkit-border-radius:6px;
+        border-radius:6px;
+        cursor: pointer;
+        font-family:Arial;
+        font-size:15px;
+        font-weight:bold;
+        padding:6px 24px;
+        text-decoration:none;
+        color: white;
+        transition: 0.40s ease;
+        outline: none;
+        &:hover{
+            background: -moz-linear-gradient(top,  #3a4ed5 0% ,#3acfd5 100%);
+            background: -webkit-linear-gradient(top, #3a4ed5 0% ,#3acfd5 100%);
+            background: linear-gradient(to right, #3a4ed5 0% ,#3acfd5 100%);
+            background:-o-linear-gradient(to right, #3a4ed5 0% ,#3acfd5 100%);
+            background:-ms-linear-gradient(to right, #3a4ed5 0% ,#3acfd5 100%);
+            margin-top:0rem;    
+        }
   }
      margin-top:5rem;
      margin-bottom: 2rem;
-    // height: 30rem;
-     font-size: 3rem;
+    font-size: 3rem;
     .formPart{
-
         display: flex;
         justify-content: space-around;
         margin: 1rem;
         input, 
         textarea {
-  background: transparent;
-width: 20rem;
-  border: 0;
-  color: #f2f2f2;
-  font-size: 2rem;
- 
-  height: 30px;
-  line-height: 30px;
-  outline: none !important;
- border: 0.1rem solid transparent;
- border-top: none;
- border-left:none ;
- border-right: none;
-  -moz-border-image: -moz-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
-  -webkit-border-image: -webkit-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
-  border-image: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%);
-  border-image-slice: 1;
-  overflow: scroll;
-  transition: 0.25s ease;
-  padding:2rem 0;
-  textarea{
-      overflow: scroll;
-  }
-  &:hover{
-      border: 0.1rem solid transparent;
-       -moz-border-image: -moz-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
-  -webkit-border-image: -webkit-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
-  border-image: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%);
-  border-image-slice: 1;
-  background:-moz-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
-  background:linear-gradient(top, #3ad0d57e 0%, #3a4fd57e 100%);
-  }
-  
-}
-input::-moz-focus-inner { 
-  border: 0; 
-}
+        background: transparent;
+        width: 20rem;
+        border: 0;
+        color: #f2f2f2;
+        font-size: 2rem;
+        height: 30px;
+        line-height: 30px;
+        outline: none !important;
+        border: 0.1rem solid transparent;
+        border-top: none;
+        border-left:none ;
+        border-right: none;
+        -moz-border-image: -moz-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+        -webkit-border-image: -webkit-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+        border-image: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%);
+        border-image-slice: 1;
+        overflow: scroll;
+        transition: 0.25s ease;
+        padding:2rem 0;
+        textarea{
+            overflow: scroll;
+        }
+        &:hover{
+            border: 0.1rem solid transparent;
+            -moz-border-image: -moz-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+        -webkit-border-image: -webkit-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+        border-image: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%);
+        border-image-slice: 1;
+        background:-moz-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+        background:linear-gradient(top, #3ad0d57e 0%, #3a4fd57e 100%);
     }
-
+}
+    input::-moz-focus-inner { 
+    border: 0; 
+    }
+}
 }
 
 .errorMessage{
-     color: red;
-     font-size: 1.5rem;
-   display: flex;
-        justify-content: space-around;
-   
+    color: red;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-around; 
 }
 
