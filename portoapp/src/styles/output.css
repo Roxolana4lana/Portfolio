@@ -23,7 +23,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   overflow: hidden;
   height: 100vh; }
 
@@ -75,16 +75,16 @@ body {
     .NavBar {
       width: 20%;
       background-color: #020611cc; } }
-  .NavBar ul li {
+  .NavBar .liBar {
     list-style-type: none;
     margin-top: 1rem;
     margin-bottom: 6rem; }
-    .NavBar ul li a {
+    .NavBar .liBar a {
       color: white;
       font-size: 4rem;
       text-decoration: none;
       position: relative; }
-      .NavBar ul li a:after {
+      .NavBar .liBar a:after {
         content: '';
         width: 0%;
         height: 0.2rem;
@@ -99,10 +99,10 @@ body {
         left: 50%;
         border-radius: 10px;
         transition: all 400ms ease; }
-      .NavBar ul li a:hover {
+      .NavBar .liBar a:hover {
         color: #1b83bd;
         padding-bottom: 0.6rem; }
-      .NavBar ul li a:hover::after {
+      .NavBar .liBar a:hover::after {
         left: 0%;
         width: 100%; }
 
@@ -137,11 +137,23 @@ body {
     top: 90vh; } }
 .About {
   background-color: #020611;
-  height: 100vh;
   width: 100vw;
   color: white;
   padding-top: 10vh;
   text-align: center; }
+  @media (min-width: 312px) {
+    .About {
+      height: 100%; } }
+  @media (min-width: 696px) {
+    .About {
+      height: 100%; } }
+  @media (min-width: 1180px) {
+    .About {
+      height: 100vh; } }
+  .About .addInfo {
+    margin: 7rem 4rem; }
+  .About h3 {
+    font-size: 2rem; }
   .About .pAbout {
     position: relative;
     font-size: 3rem; }
@@ -171,66 +183,93 @@ body {
     transform: rotateY(0deg); }
   to {
     transform: rotateY(359deg); } }
-.Bla,
 .mainForm {
   background-color: #020611;
-  height: 100%;
+  height: 100vh;
   width: 100vw;
   color: white;
   padding-top: 10vh;
   text-align: center; }
   @media (min-width: 312px) {
-    .Bla,
     .mainForm {
       height: 100%; } }
   @media (min-width: 696px) {
-    .Bla,
     .mainForm {
       height: 100%; } }
   @media (min-width: 1180px) {
-    .Bla,
     .mainForm {
       height: 100vh; } }
-  .Bla h2,
   .mainForm h2 {
     position: relative;
     font-size: 3rem;
     text-align: center; }
-  .Bla h1,
   .mainForm h1 {
     font-size: 3rem; }
 
-.theImage {
-  display: flex; }
+.wrapper {
+  text-align: center; }
+  .wrapper h2 {
+    font-size: 3rem;
+    margin-bottom: 7rem; }
+
+.Bla {
+  height: 100%;
+  width: 100vw;
+  color: white;
+  background-color: #020611;
+  padding-top: 10vh; }
+
+.imageBlock {
+  display: flex;
+  margin-bottom: 2rem;
+  justify-content: space-around; }
   @media (min-width: 312px) {
-    .theImage {
-      flex-direction: column;
-      margin-top: 4vh; } }
+    .imageBlock {
+      flex-direction: column; } }
   @media (min-width: 696px) {
-    .theImage {
+    .imageBlock {
       flex-direction: column;
-      margin-top: 10vh; } }
+      padding: 0 9%; } }
   @media (min-width: 1180px) {
-    .theImage {
+    .imageBlock {
       flex-direction: row;
-      justify-content: space-around;
-      margin-top: 15vh; } }
-  .theImage h1 {
+      justify-content: space-around; } }
+  .imageBlock h1 {
     color: #fff;
     margin-bottom: 1rem;
-    text-align: center;
     font-size: 3rem; }
-  .theImage .MyImage {
-    position: relative;
-    align-self: center; }
-    .theImage .MyImage .seeImage {
-      width: 30rem;
-      height: 30rem; }
+  .imageBlock .imageRight {
+    font-size: 2rem;
+    text-align: right; }
+    @media (min-width: 312px) {
+      .imageBlock .imageRight {
+        width: 100%;
+        padding-right: 2rem; } }
+    @media (min-width: 696px) {
+      .imageBlock .imageRight {
+        width: 70rem; } }
+    @media (min-width: 1180px) {
+      .imageBlock .imageRight {
+        width: 60rem; } }
+  .imageBlock .myButtons {
+    display: flex;
+    flex-direction: row;
+    float: right; }
+
+.seeImage {
+  width: 50rem;
+  height: 40rem; }
+  @media (min-width: 312px) {
+    .seeImage {
+      width: 100vw; } }
+  @media (min-width: 696px) {
+    .seeImage {
+      width: 70rem; } }
+  @media (min-width: 1180px) {
+    .seeImage {
+      width: 60rem; } }
 
 .hoveredLink {
-  position: absolute;
-  margin-top: 11rem;
-  margin-left: -7rem;
   -moz-box-shadow: inset 0px 1px 0px 0px #97c4fe;
   -webkit-box-shadow: inset 0px 1px 0px 0px #97c4fe;
   box-shadow: inset 0px 1px 0px 0px #97c4fe;
@@ -248,6 +287,7 @@ body {
   font-size: 15px;
   font-weight: bold;
   padding: 6px 24px;
+  margin: 0 1rem;
   text-decoration: none; }
   .hoveredLink:hover {
     background: -moz-linear-gradient(top, #3a4ed5 0%, #3acfd5 100%);
@@ -262,7 +302,7 @@ body {
 
 .myForm {
   margin-top: 5rem;
-  height: 30rem;
+  margin-bottom: 2rem;
   font-size: 3rem; }
   .myForm .formButton {
     background: -moz-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
@@ -279,7 +319,8 @@ body {
     padding: 6px 24px;
     text-decoration: none;
     color: white;
-    transition: 0.40s ease; }
+    transition: 0.40s ease;
+    outline: none; }
     .myForm .formButton:hover {
       background: -moz-linear-gradient(top, #3a4ed5 0%, #3acfd5 100%);
       background: -webkit-linear-gradient(top, #3a4ed5 0%, #3acfd5 100%);
@@ -327,21 +368,52 @@ body {
     .myForm .formPart input::-moz-focus-inner {
       border: 0; }
 
-.myContacts {
-  color: white;
-  font-size: 4rem; }
-  @media (min-width: 312px) {
-    .myContacts {
-      margin-top: 10rem; } }
-  @media (min-width: 696px) {
-    .myContacts {
-      margin-top: 12rem; } }
+.errorMessage {
+  color: red;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-around; }
+
+.sendMessage {
+  color: green;
+  font-size: 2rem; }
+
+.Footer {
+  background-color: #020611fd;
+  z-index: 3;
+  width: 100vw;
+  text-align: center;
+  text-align: center; }
   @media (min-width: 1180px) {
-    .myContacts {
-      margin-top: 15rem; } }
-  .myContacts .icony {
-    color: white;
-    margin: 1rem 5rem;
-    cursor: pointer; }
+    .Footer {
+      margin-top: 15rem;
+      position: absolute; } }
+  @media (min-width: 312px) {
+    .Footer .myContacts {
+      display: flex;
+      flex-direction: column;
+      font-size: 1.4rem; } }
+  @media (min-width: 696px) {
+    .Footer .myContacts {
+      display: flex;
+      flex-direction: column;
+      font-size: 1.8rem; } }
+  @media (min-width: 1180px) {
+    .Footer .myContacts {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 70%;
+      margin: 1rem auto 0 auto;
+      font-size: 2rem; } }
+  .Footer .myContacts a {
+    text-decoration: none;
+    color: white; }
+  .Footer .rights {
+    margin-top: 2rem;
+    margin-bottom: 0rem; }
+    @media (min-width: 1180px) {
+      .Footer .rights {
+        margin-left: 3rem; } }
 
 /*# sourceMappingURL=output.css.map */
