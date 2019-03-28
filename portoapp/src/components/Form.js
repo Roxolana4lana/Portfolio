@@ -64,7 +64,7 @@ export default class ContactForm extends Component {
            subject:this.state.subject,
            text:this.state.text
        }
-        axios.post(`http://127.0.0.1:8000/send_email/`,mail)
+            axios.post(`http://80.211.249.59/send_email/`,mail)
        .then(res=>console.log(res.data))
             .catch(err => console.log(err))
             .then(this.setState({
