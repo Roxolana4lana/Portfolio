@@ -51,7 +51,7 @@ export default class ImageOne extends Component {
                     'name': im4,
                     'project': 'Portfolio',
                     'href': 'https://github.com/Roxolana4lana/Portfolio/tree/master/portoapp',
-                    'info': 'Created with react, backend for sending emails via form  is created with node.js, sendgrid, express. For navigation purposes I have used ‘react-scroll’. Styling is created with sass. '
+                    'info': 'Created with react. For navigation purposes I have used ‘react-scroll’. Styling is created with sass. '
 
                 }
             ],
