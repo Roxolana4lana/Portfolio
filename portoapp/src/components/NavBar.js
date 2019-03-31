@@ -17,7 +17,6 @@ const Item = posed.li({
 });
 
 
-
 class NavBar extends Component {
     constructor() {
         super()
@@ -29,31 +28,23 @@ class NavBar extends Component {
         }
     }
 
-    // handleClick = e => {
-    //     this.setState(prevState => ({
-    //         doesi: !prevState.doesi
-    //     }))
-    // }
-
     handleMy = () => {
         this.setState({
             isOpen: !this.state.isOpen
         })
-
     }
     render() {
-       // let navbut = this.state.doesi ? (<NavBar />) : null;
         let theButton = !this.state.isOpen?( < div className = 'NavButton' >
             <i className="fas fa-bars" onClick={this.handleMy}
                 style={{ display: this.state.doesi ? 'none' : 'block' }}>
             </i></div> )  : true
-//  <div className='NavBar' style={{ zIndex: '2'}}>
         return (
             <React.Fragment>
              
                 <div className='Nav'style={{zIndex:'2'}}>
                     {theButton}
-                    <Sidebar className='NavBar' pose={this.state.isOpen ? 'open' : 'closed'} onClick={this.handleMy}>
+                    <Sidebar className='NavBar' pose={this.state.isOpen ? 'open' : 'closed'} >
+                        <div className='NavButton' onClick={this.handleMy}> <i className="fas fa-times"></i></div>
                         <Item className='liBar' style={{listStyleType:'none'}}>
                             <Link to='home'
                             spy={true}
